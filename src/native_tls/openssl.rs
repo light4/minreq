@@ -276,6 +276,10 @@ impl TlsConnector {
         }
         supported_protocols(builder.min_protocol, builder.max_protocol, &mut connector)?;
 
+        if let Some(cipher_list) = &builder.cipher_list {
+            connector.set_cipher_list(&cipher_list)?;
+        }
+
         if builder.disable_built_in_roots {
             connector.set_cert_store(X509StoreBuilder::new()?.build());
         }

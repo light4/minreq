@@ -4,7 +4,7 @@
 /// that, check out examples/json.rs!
 
 fn main() -> Result<(), minreq::Error> {
-    let response = minreq::get("http://httpbin.org/anything")
+    let response = minreq::get("https://httpbin.org/anything")
         .with_body("Hello, world!")
         .send()?;
     let hello = response.as_str()?;

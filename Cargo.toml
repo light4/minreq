@@ -57,6 +57,7 @@ proxy = ["base64"]
 
 [[example]]
 name = "hello"
+required-features = ["https"]
 
 [[example]]
 name = "iterator"

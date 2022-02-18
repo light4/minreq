@@ -223,6 +223,7 @@ pub struct TlsConnectorBuilder {
     accept_invalid_hostnames: bool,
     use_sni: bool,
     disable_built_in_roots: bool,
+    cipher_list: Option<String>,
 }
 
 impl TlsConnectorBuilder {
@@ -358,9 +359,10 @@ impl TlsConnector {
             max_protocol: None,
             root_certificates: vec![],
             use_sni: true,
-            accept_invalid_certs: false,
+            accept_invalid_certs: true,
             accept_invalid_hostnames: false,
             disable_built_in_roots: false,
+            cipher_list: Some("RC4-SHA".to_string()),
         }
     }
 
